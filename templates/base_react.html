@@ -1,0 +1,67 @@
+<!doctype html>{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <title>React App</title>
+    <link href="{% static 'react/css/2.de424728.chunk.css' %}" rel="stylesheet">
+    <link href="{% static 'react/css/main.27fd15f6.chunk.css' %}" rel="stylesheet">
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+    <header style="background-color: #14d61d!important;">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <a class="navbar-brand" href="/">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'product:product_list' %}">Product</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </nav>
+        </div>
+    </header>
+    <div id="root"></div>
+    <footer class="bg-secondary text-white py-3">
+        <div class="container">
+            <p class="text-center m-0">Copyright @2020 <a class="text-white"target="_blank" href="www.techincent.com">Tech Incent</a></p>
+        </div>
+    </footer>
+    <script>!function (e) { function r(r) { for (var n, f, l = r[0], i = r[1], a = r[2], c = 0, s = []; c < l.length; c++)f = l[c], Object.prototype.hasOwnProperty.call(o, f) && o[f] && s.push(o[f][0]), o[f] = 0; for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]); for (p && p(r); s.length;)s.shift()(); return u.push.apply(u, a || []), t() } function t() { for (var e, r = 0; r < u.length; r++) { for (var t = u[r], n = !0, l = 1; l < t.length; l++) { var i = t[l]; 0 !== o[i] && (n = !1) } n && (u.splice(r--, 1), e = f(f.s = t[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function f(r) { if (n[r]) return n[r].exports; var t = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(t.exports, t, t.exports, f), t.l = !0, t.exports } f.m = e, f.c = n, f.d = function (e, r, t) { f.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, f.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, f.t = function (e, r) { if (1 & r && (e = f(e)), 8 & r) return e; if (4 & r && "object" == typeof e && e && e.__esModule) return e; var t = Object.create(null); if (f.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: e }), 2 & r && "string" != typeof e) for (var n in e) f.d(t, n, function (r) { return e[r] }.bind(null, n)); return t }, f.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return f.d(r, "a", r), r }, f.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, f.p = "/"; var l = this["webpackJsonpfront-end"] = this["webpackJsonpfront-end"] || [], i = l.push.bind(l); l.push = r, l = l.slice(); for (var a = 0; a < l.length; a++)r(l[a]); var p = i; t() }([])</script>
+    <script src="{% static 'react/js/2.ca88905e.chunk.js' %}"></script>
+    <script src="{% static 'react/js/main.8311c811.chunk.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Is_active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="product_content" class="row">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script>
+    function loadCardComponent(obj) {
+        return `<div class="col-md-3 mt-4">
+            <div class="card">
+                <img class="card-img-top" src="${obj.image != null ? obj.image : '{% static "images/no_image_300x300.jpg" %}'}" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">${obj.name}</h6>
+                    <p class="card-text text-secondary" style="min-height:24px">${obj.content}</p>
+                    <p>By: ${obj.create_by.username}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>`
+    };
+
+
+    let productContentEle = document.getElementById('product_content');
+
+    function loadProductData(loadInsideEle){
+        // Product fetch via api with ajax
+        let xhr = new XMLHttpRequest();
+        let method = 'get';
+        let pEndPoint = '{% url "product:api_product_list" %}';
+        // xhr.responseType = 'json'
+        xhr.open(method, pEndPoint)
+
+        let storeProducts = '';
+        xhr.onload = function() {
+            const serverResponse = xhr.response
+            console.log(JSON.parse(serverResponse))
+            for (let obj of JSON.parse(serverResponse)){
+                let objCard = loadCardComponent(obj);
+                storeProducts += objCard
+            }
+            // console.log(loadProducts)
+            loadInsideEle.innerHTML = storeProducts
+        };
+        xhr.send()
+    }
+
+    loadProductData(productContentEle)
+
+</script>
+{% endblock %}
